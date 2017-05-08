@@ -114,7 +114,7 @@
 <!--메인 박스-->
 
 
-<!--색상 메뉴-->
+<!--배경색 메뉴-->
 <div id="control_color" style="display:none;" align="center">
 	색상<br>
 	<input id="chosen-cvalue" value="000000" style="width:90%;" readonly/><br><br>
@@ -122,7 +122,7 @@
 		선 택
 	</button>
 </div>
-<!--색상 메뉴-->
+<!--배경색 메뉴-->
 
 
 
@@ -217,7 +217,6 @@
 
 <!-- Jquery START -->
 <script type="text/javascript">
-var cmD = 1; // DIV갯수 전역변수. 0보다 커야함
 
 // DIV Drag&Drop&Resize
 
@@ -230,13 +229,12 @@ $('.draggable')
 // DIV ADD & REMOVE & SELECT
 var btnmakeid="btn_make";			// 선택된 div id
 var btnmaketextid="btn_make_text";	// 선택된 div 안의 text div id
-var Dnum = 1;	// div ID 구분자
-var chk = 0;	// div 선택 구분자
+var Dnum = 1;	// div ID 구분자 (ex. btn_make_Dnum)
+var chk = 0;	// div 선택 구분자 (0=선택x 1=선택o)
 
 // ADD
 // 완전히 새로추가
 $('.makingtool_menu_4').click(function() {
-	cmD++;
 	Dnum++;
 	$(".draggable").css("opacity", 0.5);
 	$('.makingtool').append(
@@ -248,7 +246,6 @@ $('.makingtool_menu_4').click(function() {
 })
 // DIV 안에 DIV 추가
 $('.makingtool_menu_7').click(function() {
-	cmD++;
 	Dnum++;
 	$(".draggable").css("opacity", 0.5);
 	$("#"+btnmakeid).append(
@@ -262,13 +259,14 @@ $('.makingtool_menu_7').click(function() {
 
 // DELETE
 $('.makingtool_menu_5').click(function() {
-	
-	alert("제거");
-	if(cmD==1 || chk==0){alert("더 이상 지울 수 없거나 선택된 DIV가 없습니다.");}
-	else{
-		$("#"+btnmakeid).remove();
-		cmD--;
-		chk=0;
+	var delete_chk = confirm("정말로 제거할까요?");
+	if(delete_chk==true)
+	{
+		if(chk==0){alert("더 이상 지울 수 없거나 선택된 DIV가 없습니다.");}
+		else{
+			$("#"+btnmakeid).remove();
+			chk=0;
+		}
 	}
 })
 

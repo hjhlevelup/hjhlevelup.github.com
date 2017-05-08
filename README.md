@@ -12,3 +12,32 @@
 캡스톤디자인
 
 $ node server.js
+
+//// github ////
+
+현재 디렉토리 깃에 올릴 준비
+git add . 
+
+"이름"으로 커밋
+git commit -m "이름"
+
+깃에 저장
+git push
+
+//// github ////
+
+
+//// HEROKU ////
+
+heroku login
+heroku create
+
+git push heroku master
+한 뒤 밑에 주소 따라 들어가면됨
+
+도메인 확인
+heroku domains 
+
+현재 주소 : fathomless-basin-19462.herokuapp.com    /   92ui.uy.to
+
+//// HEROKU ////
