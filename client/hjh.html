@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+<meta charset="UTF-8"/>
+
+<title>Team GUIUI</title>
+
+<meta name="description" content="Onepage Multipurpose Bootstrap HTML Template">
+
+<meta name="author" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/theme.css">
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+<!--LOAD Google WEB-PONT-->
+<link href='https://fonts.googleapis.com/earlyaccess/nanumpenscript.css' rel='stylesheet' type='text/css'>
+
+<!--Javascripts-->
+<script src="js/jquery.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/menustick.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/masonry.js"></script>
+<script src="js/imgloaded.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/colorfinder.js"></script>
+<script src="js/gridscroll.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/common.js"></script>
+<script src="js/hjh.js"></script>		<!--DIV Drag&Drop-->
+<script src="js/jscolor.js"></script>	<!--DIV COLORPICKER-->
+
+<!--DIV Drag&Drop&Resize-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+<!--DIV Drag&Drop&Resize-->
+
+</head>
+<body style='background-color:#FFBD8A;'>
+
+
+
+<!--뒤로가기-->
+<div class="backguiui">
+	<p class="text-center">
+		<a href="/guiui.html" class="backtoguiui"><i class="fa fa-angle-double-left fa-2x"></i></a>
+	</p>
+</div>
+<!--뒤로가기-->
+
+
+
+<!--상단메뉴-->
+<div class="makingtool_menu">
+	<div class="makingtool_menu_1" onclick="div_color()">
+		<center>배 경 색</center>
+	</div>
+	<div class="makingtool_menu_2" onclick="div_border()">
+		<center>테 두 리</center>
+	</div>
+	<div class="makingtool_menu_3" onclick="div_text()">
+		<center>텍 스 트</center>
+	</div>
+	<div class="makingtool_menu_4">
+		<center>추    가</center>
+	</div>
+	<div class="makingtool_menu_5">
+		<center>삭    제</center>
+	</div>
+	<div class="makingtool_menu_6">
+		<center>반    환</center>
+	</div>
+	<div class="makingtool_menu_7">
+		<center>그룹추가</center>
+	</div>
+
+</div>
+<!--상단메뉴-->
+
+
+
+<!--메인 박스-->
+<div class="makingtool" id="makingtool">
+	<div id="btn_make" class="btn_make draggable"
+		 style="position:absolute;left:1px;top:1px;
+		 width:100px;height:100px;
+		 display:table;
+		 background-color:#fff;
+		 border-style:solid;border-width:5px;border-color:#eee;border-radius: 30px;"
+	>
+		<p id="btn_make_text" class="btn_make_text"
+			 style="text-align:center;display:table-cell;vertical-align:middle;font-size:15px;color:#000;">Guiui</p>
+	</div>
+</div>
+<!--메인 박스-->
+
+
+<!--색상 메뉴-->
+<div id="control_color" style="display:none;" align="center">
+	색상<br>
+	<input id="chosen-cvalue" value="000000" style="width:90%;" readonly/><br><br>
+	<button class="jscolor {valueElement:'chosen-cvalue', onFineChange:'setboxColor(this)'}">
+		선 택
+	</button>
+</div>
+<!--색상 메뉴-->
+
+
+
+<!--DIV Border-->
+<div id="control_border" style="display:none;" align="center">
+	굵기<br>
+	<input id="chosen-border" value="5" style="width:30%;height:30px;text-align:center;">px
+	<button class="border_width" onclick='setBorderWidth()'>
+		적 용
+	</button>
+	<br>
+		
+	둥글게<br>
+	<input id="chosen-radius" value="30" style="width:30%;height:30px;text-align:center;">px
+	<button class="border_radius" onclick='setBorderRadius()'>
+		적 용
+	</button>
+	<br>
+
+	스타일<br>
+	<select name="borderstyle" id="BStyle" style="height:30px;text-align:center;">
+   		<option value="solid">solid</option>
+   		<option value="none">none</option>
+   		<option value="dotted">dotted</option>
+   		<option value="dashed">dashed</option>
+   		<option value="double">double</option>
+   		<option value="groove">groove</option>
+   		<option value="ridge">ridge</option>
+   		<option value="inset">inset</option>
+   		<option value="outset">outset</option>
+	</select>
+	<button class="border_style" onclick='setBorderStyle()'>적 용</button>
+	<br>
+	
+	색상<br>
+	<input id="chosen-bvalue" value="000000" style="width:90%;" readonly/><br>
+	<button class="jscolor {valueElement:'chosen-bvalue', onFineChange:'setBorderColor(this)'}">
+		선 택
+	</button>
+</div>
+<!--DIV Border-->
+
+
+
+<!--DIV text-->
+<div id="control_text" style="display:none;" align="center">
+	크기<br>
+	<input id="chosen-text-size" value="15" style="width:30%;height:30px;text-align:center;">px
+	<button class="button_text_size" onclick='setTextSize()'>
+		적 용
+	</button>
+	<br>
+	
+	내용<br>
+	<input id="chosen-text" value="Guiui" style="width:90%;"><br>
+	<button class="button_text" onclick='setText()'>
+		적 용
+	</button>
+	<br>
+		
+	정렬<br>
+	<select id="tAlign">
+		<option value="center">가운데</option>
+		<option value="left">왼쪽</option>
+		<option value="right">오른쪽</option>
+	</select>
+	<button class="button_text_align" onclick='setTextAlign()'>
+		적 용
+	</button>
+	<br>
+		
+	색상<br>
+	<input id="chosen-tvalue" value="000000" style="width:90%;" readonly/><br>
+	<button class="jscolor {valueElement:'chosen-tvalue', onFineChange:'setTextColor(this)'}">
+		선 택
+	</button>
+</div>
+<!--DIV text-->
+
+
+
+<!--Return code-->
+<div class="return_code" style="z-index=0;">
+	<textarea id="return_code_area_html" style="height:400px;" readonly></textarea><br>
+	<button onclick="returnCode()">
+		출력
+	</button>
+</div>
+<!--Return code-->
+
+
+
+<!-- Jquery START -->
+<script type="text/javascript">
+var cmD = 1; // DIV갯수 전역변수. 0보다 커야함
+
+// DIV Drag&Drop&Resize
+
+$('.draggable')
+	.draggable()
+	.resizable({autoHide: true}); //커서없을때 숨기기
+
+// DIV Drag&Drop&Resize
+
+// DIV ADD & REMOVE & SELECT
+var btnmakeid="btn_make";			// 선택된 div id
+var btnmaketextid="btn_make_text";	// 선택된 div 안의 text div id
+var Dnum = 1;	// div ID 구분자
+var chk = 0;	// div 선택 구분자
+
+// ADD
+// 완전히 새로추가
+$('.makingtool_menu_4').click(function() {
+	cmD++;
+	Dnum++;
+	$(".draggable").css("opacity", 0.5);
+	$('.makingtool').append(
+		'<div id="btn_make_' + Dnum + '" class="btn_make draggable" style="position:absolute;left:1px;top:1px;width:100px;height:100px;display:table;background-color:#fff;border-style:solid;border-width:5px;border-color:#eee;border-radius: 30px;"><div id="btn_make_text_' + Dnum + '" class="btn_make_text" style="text-align:center;display:table-cell;vertical-align:middle;font-size:15px;color:#000;">TEST'+Dnum+'</div></div>');
+	btnmakeid="btn_make_"+Dnum;
+	$('.draggable')
+	.draggable()
+	.resizable({autoHide: true});
+})
+// DIV 안에 DIV 추가
+$('.makingtool_menu_7').click(function() {
+	cmD++;
+	Dnum++;
+	$(".draggable").css("opacity", 0.5);
+	$("#"+btnmakeid).append(
+		'<div id="btn_make_' + Dnum + '" class="btn_make draggable" style="position:absolute;left:1px;top:1px;width:100px;height:100px;display:table;background-color:#fff;border-style:solid;border-width:5px;border-color:#eee;border-radius: 30px;"><div id="btn_make_text_' + Dnum + '" class="btn_make_text" style="text-align:center;display:table-cell;vertical-align:middle;font-size:15px;color:#000;">TEST'+Dnum+'</div></div>');
+	btnmakeid="btn_make_"+Dnum;
+	$("#"+btnmakeid).parents().css("opacity", 1);
+	$('.draggable')
+	.draggable()
+	.resizable({autoHide: true});
+})
+
+// DELETE
+$('.makingtool_menu_5').click(function() {
+	
+	alert("제거");
+	if(cmD==1 || chk==0){alert("더 이상 지울 수 없거나 선택된 DIV가 없습니다.");}
+	else{
+		$("#"+btnmakeid).remove();
+		cmD--;
+		chk=0;
+	}
+})
+
+// SELECT
+$(document).ready(function() {
+	$(".return_code").hide();
+	$(".draggable").live("mousedown", function(){
+		chk=1;
+		$(".draggable").css("z-index", 100).css("opacity", 0.5);
+		$(this).css("z-index", 101).css("opacity", 1);
+		$(this).find("div").css("opacity",1);
+		$(this).parents().css("opacity",1);
+		btnmakeid = $(this).attr('id');
+		btnmaketextid = $("#"+btnmakeid).children().attr('id');
+		change_tog(btnmakeid,btnmaketextid);
+	})
+})
+// DIV ADD & REMOVE & SELECT
+
+// Return code
+var rcchk=0;
+$('.makingtool_menu_6').click(function() {
+	if(rcchk==1){
+		$(".return_code").hide();
+		rcchk=0;
+	}
+	else{
+		$(".return_code").show();
+		rcchk=1;
+	}
+})
+// Return code
+
+</script>
+<!-- Jquery END -->
+
+
+
+
+</body>
+</html>
